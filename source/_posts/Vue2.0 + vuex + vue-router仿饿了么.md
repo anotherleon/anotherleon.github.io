@@ -1,7 +1,7 @@
 ---
 title: Vue2.0 + vuex + vue-router仿饿了么app
 date: 2017-9-24 00:00
-tags: 
+tags: [vue,vuex,vue-router]
 categories: 前端技术
 ---
 
