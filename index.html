@@ -512,19 +512,19 @@
 
 
   
-    <article id="post-关于line-height&amp;vertical-align" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-移动端适配方案总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/05/关于line-height&vertical-align/">移动端适配方案总结</a>
+      <a class="article-title" href="/2017/11/05/移动端适配方案总结/">移动端适配方案总结</a>
     </h1>
   
 
         
-        <a href="/2017/11/05/关于line-height&vertical-align/" class="archive-article-date">
+        <a href="/2017/11/05/移动端适配方案总结/" class="archive-article-date">
   	<time datetime="2017-11-05T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-05</time>
 </a>
         
@@ -532,18 +532,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
-<li><a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" target="_blank" rel="external">css行高line-height的一些深入理解及应用</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2010/05/%E6%88%91%E5%AF%B9css-vertical-align%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%B8%8E%E8%AE%A4%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="external">我对CSS vertical-align的一些理解与认识一</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2010/06/css-vertical-align%E7%9A%84%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8Btext-top%E7%AF%87/" target="_blank" rel="external">CSS vertical-align的深入理解(二)之text-top篇</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/" target="_blank" rel="external">CSS深入理解vertical-align和line-height的基友关系</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2009/08/%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%9B%BA%E5%AE%9A%E7%9A%84%E5%9B%BE%E7%89%87%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E5%AD%97%E7%9A%84%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" target="_blank" rel="external">大小不固定的图片、多行文字的水平垂直居中</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/" target="_blank" rel="external">CSS float浮动的深入研究、详解及拓展(一)</a></li>
+        <ul>
+<li>布局视口layout viewport：指根元素html的宽度，用document.documentElement.clientWidth获取</li>
+<li>视觉视口visual viewport: 显示在视觉区域内的css像素宽度，页面缩放会影响其大小,用window.innerWidth获取</li>
+<li>理想视口：screen.width指设备屏幕宽度，在移动端开发时，把布局视口的宽度设置这个宽度，成为理想视口</li>
+<li>布局视口就好像一片大小固定的风景，视觉视口就好像相机里的显示屏里看到的画面，焦距越小（页面缩小）画面内容越多（视口越大），焦距越大（页面放大）画面内容越少（视口越小）<blockquote>
+<p>Screen size tests  <a href="https://quirksmode.org/m/tests/widthtest_vp380.html" target="_blank" rel="external">https://quirksmode.org/m/tests/widthtest_vp380.html</a><br>本人使用chrome浏览器模拟手机设备，页面缩放后，测试window.innerWidth返回值错误</p>
+</blockquote>
+</li>
 </ul>
-        
-          <a class="article-more-a" href="/2017/11/05/关于line-height&vertical-align/#more">more >></a>
-        
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
+<li><a href="http://div.io/topic/1092" target="_blank" rel="external">移动端高清、多屏适配方案</a></li>
+<li><a href="http://www.cnblogs.com/chris-oil/p/5367106.html" target="_blank" rel="external">移动端尺寸基础知识</a></li>
+<li><a href="http://www.w3cplus.com/css/viewports.html" target="_blank" rel="external">PPK剖析viewports</a></li>
+</ul>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><ul>
+<li><a href="https://segmentfault.com/a/1190000004189237" target="_blank" rel="external">移动端应该如何动态设置字体大小</a></li>
+<li><a href="https://segmentfault.com/a/1190000004344753" target="_blank" rel="external">移动端页面布局及字体大小该如何设置</a></li>
+<li><a href="https://github.com/riskers/blog/issues/17" target="_blank" rel="external">移动端适配方案(上)</a></li>
+<li><a href="https://github.com/riskers/blog/issues/18" target="_blank" rel="external">移动端适配方案(下)</a></li>
+<li><a href="https://github.com/Hancoson/blog/issues/11" target="_blank" rel="external">移动端前端适配方案对比</a></li>
+<li><a href="http://www.jianshu.com/p/985d26b40199" target="_blank" rel="external">手机端页面自适应解决方案—rem布局进阶版（附源码示例</a></li>
+<li><a href="http://hcysun.me/2015/10/19/%E4%B8%80%E7%AF%87%E7%9C%9F%E6%AD%A3%E6%95%99%E4%BC%9A%E4%BD%A0%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%87%E7%AB%A0-%E4%BA%8C/" target="_blank" rel="external">一篇真正教会你开发移动端页面的文章(二)</a></li>
+</ul>
+<h2 id="手淘解决方案"><a href="#手淘解决方案" class="headerlink" title="手淘解决方案"></a>手淘解决方案</h2><ul>
+<li><a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a></li>
+<li><a href="https://www.w3cplus.com/css/vw-for-layout.html" target="_blank" rel="external">再聊移动端页面的适配</a></li>
+<li><a href="http://www.cnblogs.com/lyzg/p/4877277.html" target="_blank" rel="external">从网易与淘宝的font-size思考前端设计稿与工作流</a></li>
+<li><a href="http://www.cnblogs.com/lyzg/p/5058356.html" target="_blank" rel="external">淘宝弹性布局方案lib-flexible实践</a></li>
+<li><a href="https://github.com/chesscai/flexible-adaptive" target="_blank" rel="external">基于淘宝适配方案flexible + 翻屏h5 适配方案adaptive</a></li>
+<li><a href="https://github.com/imochen/hotcss" target="_blank" rel="external">移动端布局终极解决方案-hotcss</a></li>
+</ul>
+
       
 
       
@@ -611,19 +631,19 @@
 
 
   
-    <article id="post-移动端适配方案总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-关于line-height&amp;vertical-align" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/05/移动端适配方案总结/">移动端适配方案总结</a>
+      <a class="article-title" href="/2017/11/05/关于line-height&vertical-align/">移动端适配方案总结</a>
     </h1>
   
 
         
-        <a href="/2017/11/05/移动端适配方案总结/" class="archive-article-date">
+        <a href="/2017/11/05/关于line-height&vertical-align/" class="archive-article-date">
   	<time datetime="2017-11-05T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-05</time>
 </a>
         
@@ -631,38 +651,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>布局视口layout viewport：指根元素html的宽度，用document.documentElement.clientWidth获取</li>
-<li>视觉视口visual viewport: 显示在视觉区域内的css像素宽度，页面缩放会影响其大小,用window.innerWidth获取</li>
-<li>理想视口：screen.width指设备屏幕宽度，在移动端开发时，把布局视口的宽度设置这个宽度，成为理想视口</li>
-<li>布局视口就好像一片大小固定的风景，视觉视口就好像相机里的显示屏里看到的画面，焦距越小（页面缩小）画面内容越多（视口越大），焦距越大（页面放大）画面内容越少（视口越小）<blockquote>
-<p>Screen size tests  <a href="https://quirksmode.org/m/tests/widthtest_vp380.html" target="_blank" rel="external">https://quirksmode.org/m/tests/widthtest_vp380.html</a><br>本人使用chrome浏览器模拟手机设备，页面缩放后，测试window.innerWidth返回值错误</p>
-</blockquote>
-</li>
+        <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
+<li><a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" target="_blank" rel="external">css行高line-height的一些深入理解及应用</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2010/05/%E6%88%91%E5%AF%B9css-vertical-align%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%B8%8E%E8%AE%A4%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="external">我对CSS vertical-align的一些理解与认识一</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2010/06/css-vertical-align%E7%9A%84%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8Btext-top%E7%AF%87/" target="_blank" rel="external">CSS vertical-align的深入理解(二)之text-top篇</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/" target="_blank" rel="external">CSS深入理解vertical-align和line-height的基友关系</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2009/08/%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%9B%BA%E5%AE%9A%E7%9A%84%E5%9B%BE%E7%89%87%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E5%AD%97%E7%9A%84%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" target="_blank" rel="external">大小不固定的图片、多行文字的水平垂直居中</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/" target="_blank" rel="external">CSS float浮动的深入研究、详解及拓展(一)</a></li>
 </ul>
-<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
-<li><a href="http://div.io/topic/1092" target="_blank" rel="external">移动端高清、多屏适配方案</a></li>
-<li><a href="http://www.cnblogs.com/chris-oil/p/5367106.html" target="_blank" rel="external">移动端尺寸基础知识</a></li>
-<li><a href="http://www.w3cplus.com/css/viewports.html" target="_blank" rel="external">PPK剖析viewports</a></li>
-</ul>
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><ul>
-<li><a href="https://segmentfault.com/a/1190000004189237" target="_blank" rel="external">移动端应该如何动态设置字体大小</a></li>
-<li><a href="https://segmentfault.com/a/1190000004344753" target="_blank" rel="external">移动端页面布局及字体大小该如何设置</a></li>
-<li><a href="https://github.com/riskers/blog/issues/17" target="_blank" rel="external">移动端适配方案(上)</a></li>
-<li><a href="https://github.com/riskers/blog/issues/18" target="_blank" rel="external">移动端适配方案(下)</a></li>
-<li><a href="https://github.com/Hancoson/blog/issues/11" target="_blank" rel="external">移动端前端适配方案对比</a></li>
-<li><a href="http://www.jianshu.com/p/985d26b40199" target="_blank" rel="external">手机端页面自适应解决方案—rem布局进阶版（附源码示例</a></li>
-<li><a href="http://hcysun.me/2015/10/19/%E4%B8%80%E7%AF%87%E7%9C%9F%E6%AD%A3%E6%95%99%E4%BC%9A%E4%BD%A0%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%96%87%E7%AB%A0-%E4%BA%8C/" target="_blank" rel="external">一篇真正教会你开发移动端页面的文章(二)</a></li>
-</ul>
-<h2 id="手淘解决方案"><a href="#手淘解决方案" class="headerlink" title="手淘解决方案"></a>手淘解决方案</h2><ul>
-<li><a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a></li>
-<li><a href="https://www.w3cplus.com/css/vw-for-layout.html" target="_blank" rel="external">再聊移动端页面的适配</a></li>
-<li><a href="http://www.cnblogs.com/lyzg/p/4877277.html" target="_blank" rel="external">从网易与淘宝的font-size思考前端设计稿与工作流</a></li>
-<li><a href="http://www.cnblogs.com/lyzg/p/5058356.html" target="_blank" rel="external">淘宝弹性布局方案lib-flexible实践</a></li>
-<li><a href="https://github.com/chesscai/flexible-adaptive" target="_blank" rel="external">基于淘宝适配方案flexible + 翻屏h5 适配方案adaptive</a></li>
-<li><a href="https://github.com/imochen/hotcss" target="_blank" rel="external">移动端布局终极解决方案-hotcss</a></li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2017/11/05/关于line-height&vertical-align/#more">more >></a>
+        
       
 
       
